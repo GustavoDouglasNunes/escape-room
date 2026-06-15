@@ -1,0 +1,40 @@
+/* =========================================
+   ESCAPE ROOM - FOLHA DE ESTILOS
+   Desenvolvedor: Gustavo Douglas Nunes V.
+   ========================================= */
+
+body {
+  min-height: 100vh;
+  font-family: 'Courier New', monospace;
+}
+
+h1 {
+  letter-spacing: 4px;
+  color: #ffc107;
+  text-shadow: 2px 2px 5px rgba(255, 193, 7, 0.4);
+}
+
+.objeto, .alavanca {
+  padding: 20px;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.objeto:hover, .alavanca:hover {
+  transform: scale(1.05);
+}
+
+.alavanca.ativada {
+  background-color: #ffc107;
+  color: #000;
+}
+
+#codigo, #palavra {
+  font-size: 1.5rem;
+  letter-spacing: 5px;
+  width: 150px;
+}
+
+.card {
+  border: 1px solid #444;
+}
