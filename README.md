@@ -2,6 +2,11 @@
 
 Um jogo de puzzle tipo escape room com 3 salas, desenvolvido em HTML5, CSS3 e JavaScript puro.
 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat)
+
 ## 🚀 Link do Projeto - Vercel
 
 [Clique aqui para visitar o site](https://escape-room-roan-three.vercel.app/)
