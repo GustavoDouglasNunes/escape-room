@@ -4,31 +4,7 @@ Um jogo de puzzle tipo escape room com 3 salas, desenvolvido em HTML5, CSS3 e Ja
 
 ## 🚀 Deploy no Vercel
 
-### Opção 1: Via GitHub (Recomendado)
-
-1. **Faça push dos arquivos para um repositório GitHub:**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: Escape Room Game"
-   git branch -M main
-   git remote add origin https://github.com/SEU_USER/escape-room.git
-   git push -u origin main
-   ```
-
-2. **No Vercel:**
-   - Acesse [vercel.com](https://vercel.com)
-   - Clique em "New Project"
-   - Selecione seu repositório
-   - Clique em "Deploy"
-   - ✅ Pronto! Sem erros 404
-
-### Opção 2: Upload Direto (Rápido)
-
-1. Acesse [vercel.com/import](https://vercel.com/import)
-2. Selecione "Other" → "Continue"
-3. Faça upload de todos os arquivos (clique e arraste)
-4. Clique em "Deploy"
+[Clique aqui para visitar o site](https://escape-room-roan-three.vercel.app/)
 
 ## 📁 Arquivos Necessários
 
