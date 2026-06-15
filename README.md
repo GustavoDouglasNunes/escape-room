@@ -2,7 +2,7 @@
 
 Um jogo de puzzle tipo escape room com 3 salas, desenvolvido em HTML5, CSS3 e JavaScript puro.
 
-## 🚀 Deploy no Vercel
+## 🚀 Link do Projeto - Vercel
 
 [Clique aqui para visitar o site](https://escape-room-roan-three.vercel.app/)
 
