@@ -55,7 +55,6 @@ Um jogo de puzzle estilo _escape room_ com 3 salas, desenvolvido em:
 - **HTML5** → Estrutura das páginas
 - **CSS3** → Estilização e responsividade
 - **JavaScript** → Lógica interativa do jogo
-- **Tailwind** → Alertas visuais customizados
 - **Vercel** → Deploy e hospedagem
 
 ---
