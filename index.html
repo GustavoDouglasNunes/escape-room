@@ -1,61 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Escape Room - Sala 1</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Mantendo apenas o Tailwind CSS para máxima performance e consistência -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-dark text-light">
 
-  <div class="container py-4">
-    <h1 class="text-center mb-3">Escape Room</h1>
-    <h3 class="text-center text-warning mb-4">Sala 1 - O Quarto Trancado</h3>
+<body class="bg-dark text-neutral-100 min-h-screen flex flex-col justify-center bg-gradient-to-br from-neutral-900 to-black font-sans antialiased">
 
-    <div class="card bg-secondary text-light mb-4">
-      <div class="card-body">
-        <p>Voce acorda em um quarto escuro. A porta esta trancada com um cadeado de 3 digitos.</p>
-        <p>Olhe ao redor, clique nos objetos para investigar e encontre o codigo.</p>
-      </div>
-    </div>
+  <header class="text-center mt-8 mb-4">
+    <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-stone-100 uppercase scale-y-110 transform border-b-4 border-stone-700 pb-2 inline-block">
+      ESCAPE ROOM
+    </h1>
+    <h3 class="text-yellow-500 text-xl font-medium mt-2 tracking-wide">Sala 1 - O Quarto Trancado</h3>
+  </header>
 
-    <div class="row g-3 mb-4">
-      <div class="col-md-3 col-6">
-        <button class="btn btn-outline-light w-100 objeto" onclick="investigar('quadro')">Quadro na parede</button>
-      </div>
-      <div class="col-md-3 col-6">
-        <button class="btn btn-outline-light w-100 objeto" onclick="investigar('cama')">Cama</button>
-      </div>
-      <div class="col-md-3 col-6">
-        <button class="btn btn-outline-light w-100 objeto" onclick="investigar('tapete')">Tapete</button>
-      </div>
-      <div class="col-md-3 col-6">
-        <button class="btn btn-outline-light w-100 objeto" onclick="investigar('livro')">Livro na estante</button>
-      </div>
-    </div>
+  <main class="container mx-auto max-w-3xl px-4 py-6 flex-grow">
 
-    <div id="pista" class="alert alert-info" style="display:none;"></div>
+    <!-- Seção de Instruções -->
+    <section class="bg-neutral-800 rounded-xl p-6 mb-6 shadow-2xl border border-neutral-700/50">
+      <h2 class="text-xs md:text-sm text-yellow-500 font-bold uppercase tracking-widest mb-2">Instruções</h2>
+      <p class="text-lg text-neutral-300">Você acorda em um quarto escuro. A porta está trancada com um cadeado de 3 dígitos.</p>
+      <p class="mt-2 text-sm text-neutral-400">Olhe ao redor, clique nos objetos para investigar e encontre o código.</p>
+    </section>
 
-    <div class="card bg-secondary text-light">
-      <div class="card-body">
-        <h5>Cadeado da porta</h5>
-        <div class="row g-2 align-items-center">
-          <div class="col-auto">
-            <input type="text" id="codigo" maxlength="3" class="form-control text-center" placeholder="000">
-          </div>
-          <div class="col-auto">
-            <button class="btn btn-warning" onclick="verificarCodigo()">Abrir porta</button>
-          </div>
-        </div>
-        <div id="resultado" class="mt-3"></div>
+    <!-- Grid de Objetos (Substituído o Bootstrap por Grid nativo do Tailwind) -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      <button class="bg-transparent border border-neutral-600 rounded-lg p-4 font-bold uppercase text-sm tracking-wider transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-yellow-500 hover:border-yellow-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="investigar('quadro')">
+        Quadro na parede
+      </button>
+      <button class="bg-transparent border border-neutral-600 rounded-lg p-4 font-bold uppercase text-sm tracking-wider transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-yellow-500 hover:border-yellow-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="investigar('cama')">
+        Cama
+      </button>
+      <button class="bg-transparent border border-neutral-600 rounded-lg p-4 font-bold uppercase text-sm tracking-wider transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-yellow-500 hover:border-yellow-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="investigar('tapete')">
+        Tapete
+      </button>
+      <button class="bg-transparent border border-neutral-600 rounded-lg p-4 font-bold uppercase text-sm tracking-wider transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-yellow-500 hover:border-yellow-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="investigar('livro')">
+        Livro na estante
+      </button>
+    </section>
+
+    <!-- Painel de Pistas com Acessibilidade (aria-live) -->
+    <div id="pista" role="alert" aria-live="polite" class="bg-cyan-950/40 text-cyan-300 border border-cyan-800 rounded-lg p-4 shadow-md border-l-4 border-l-cyan-400 mb-6 hidden transition-all duration-300"></div>
+
+    <!-- Seção do Cadeado -->
+    <section class="bg-neutral-800 rounded-xl p-6 shadow-2xl border border-neutral-700/50">
+      <h2 class="text-xs md:text-sm text-yellow-500 font-bold uppercase tracking-widest mb-4">Cadeado da porta</h2>
+
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+        <!-- Corrigido o tracking do placeholder usando a pseudo-classe 'placeholder:tracking-normal' -->
+        <input type="text" id="codigo" maxlength="3" class="bg-neutral-900 border-2 border-neutral-700 text-yellow-500 font-bold text-2xl text-center rounded-lg py-3 px-2 w-full sm:w-36 tracking-[10px] placeholder:tracking-normal placeholder:text-neutral-600 focus:outline-none focus:border-yellow-500 transition-colors" placeholder="000">
+
+        <button class="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-3 rounded-lg font-extrabold transition-colors uppercase tracking-wider text-sm flex-grow sm:flex-grow-0" onclick="verificarCodigo()">
+          ABRIR PORTA
+        </button>
       </div>
-    </div>
 
-    <footer class="text-center mt-5 py-3 border-top border-secondary">
-      <small class="text-muted">Desenvolvido por: <span class="text-warning">Gustavo Douglas Nunes V.</span></small>
-    </footer>
-  </div>
+      <div id="resultado" role="status" class="mt-4 text-lg font-bold min-h-[1.5rem]"></div>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-6 border-t border-neutral-800/80 mt-8">
+    <small class="text-neutral-500 text-xs tracking-wide">Desenvolvido por: <span class="text-yellow-500 font-medium">Gustavo Douglas Nunes V.</span></small>
+  </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>

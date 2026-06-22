@@ -1,64 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Escape Room - Sala 2</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-dark text-light">
 
-  <div class="container py-4">
-    <h1 class="text-center mb-3">Escape Room</h1>
-    <h3 class="text-center text-warning mb-4">Sala 2 - A Biblioteca</h3>
+<body class="bg-dark text-neutral-100 min-h-screen flex flex-col justify-center bg-gradient-to-br from-neutral-900 to-black font-sans antialiased">
 
-    <div class="card bg-secondary text-light mb-4">
-      <div class="card-body">
-        <p>Voce entrou em uma biblioteca antiga. Para sair, descubra a palavra secreta.</p>
-        <p>Junte as letras escondidas nos livros para formar a palavra.</p>
-      </div>
-    </div>
+  <header class="text-center mt-8 mb-4">
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight uppercase text-white">ESCAPE ROOM</h1>
+    <h3 class="text-yellow-500 text-xl font-medium mt-2 tracking-wide">Sala 2 - A Biblioteca</h3>
+  </header>
 
-    <div class="row g-3 mb-4">
-      <div class="col-md-2 col-4">
-        <button class="btn btn-outline-light w-100" onclick="abrirLivro(1)">Livro 1</button>
-      </div>
-      <div class="col-md-2 col-4">
-        <button class="btn btn-outline-light w-100" onclick="abrirLivro(2)">Livro 2</button>
-      </div>
-      <div class="col-md-2 col-4">
-        <button class="btn btn-outline-light w-100" onclick="abrirLivro(3)">Livro 3</button>
-      </div>
-      <div class="col-md-2 col-4">
-        <button class="btn btn-outline-light w-100" onclick="abrirLivro(4)">Livro 4</button>
-      </div>
-      <div class="col-md-2 col-4">
-        <button class="btn btn-outline-light w-100" onclick="abrirLivro(5)">Livro 5</button>
-      </div>
-    </div>
+  <main class="container mx-auto max-w-3xl px-4 py-6 flex-grow">
 
-    <div id="letras" class="alert alert-info" style="display:none;"></div>
+    <section class="bg-neutral-800 rounded-xl p-6 mb-6 shadow-2xl border border-neutral-700/50">
+      <h2 class="text-xs md:text-sm text-yellow-500 font-bold uppercase tracking-widest mb-2">Instruções</h2>
+      <p class="text-lg text-neutral-300">Você entrou em uma biblioteca antiga. Para sair, descubra a palavra secreta.</p>
+      <p class="mt-2 text-sm text-neutral-400">Junte as letras escondidas nos livros para formar a palavra.</p>
+    </section>
 
-    <div class="card bg-secondary text-light">
-      <div class="card-body">
-        <h5>Digite a palavra secreta</h5>
-        <div class="row g-2 align-items-center">
-          <div class="col-auto">
-            <input type="text" id="palavra" class="form-control text-center" placeholder="palavra">
-          </div>
-          <div class="col-auto">
-            <button class="btn btn-warning" onclick="verificarPalavra()">Confirmar</button>
-          </div>
-        </div>
-        <div id="resultado" class="mt-3"></div>
+    <section class="grid grid-cols-3 md:grid-cols-5 gap-3 mb-6">
+      <button class="bg-transparent border border-neutral-600 rounded-lg p-3 font-bold uppercase text-sm tracking-wider transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-yellow-500 hover:border-yellow-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="abrirLivro(1)">
+        Livro 1
+      </button>
+      <button class="bg-transparent border border-neutral-600 rounded-lg p-3 font-bold uppercase text-sm tracking-wider transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-yellow-500 hover:border-yellow-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="abrirLivro(2)">
+        Livro 2
+      </button>
+      <button class="bg-transparent border border-neutral-600 rounded-lg p-3 font-bold uppercase text-sm tracking-wider transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-yellow-500 hover:border-yellow-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="abrirLivro(3)">
+        Livro 3
+      </button>
+      <button class="bg-transparent border border-neutral-600 rounded-lg p-3 font-bold uppercase text-sm tracking-wider transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-yellow-500 hover:border-yellow-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="abrirLivro(4)">
+        Livro 4
+      </button>
+      <button class="bg-transparent border border-neutral-600 rounded-lg p-3 font-bold uppercase text-sm tracking-wider transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-yellow-500 hover:border-yellow-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-yellow-500" onclick="abrirLivro(5)">
+        Livro 5
+      </button>
+    </section>
+
+    <div id="letras" role="alert" aria-live="polite" class="bg-cyan-950/40 text-cyan-300 border border-cyan-800 rounded-lg p-4 shadow-md border-l-4 border-l-cyan-400 mb-6 hidden transition-all duration-300"></div>
+
+    <section class="bg-neutral-800 rounded-xl p-6 shadow-2xl border border-neutral-700/50">
+      <h2 class="text-xs md:text-sm text-yellow-500 font-bold uppercase tracking-widest mb-4">Digite a palavra secreta</h2>
+
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+        <input type="text" id="palavra" class="bg-neutral-900 border-2 border-neutral-700 text-yellow-500 font-bold text-xl text-center rounded-lg py-3 px-4 w-full sm:w-48 tracking-[2px] uppercase focus:outline-none focus:border-yellow-500 transition-colors" placeholder="PALAVRA">
+
+        <button class="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-3 rounded-lg font-extrabold transition-colors uppercase tracking-wider text-sm flex-grow sm:flex-grow-0" onclick="verificarPalavra()">
+          Confirmar
+        </button>
       </div>
-    </div>
 
-    <footer class="text-center mt-5 py-3 border-top border-secondary">
-      <small class="text-muted">Desenvolvido por: <span class="text-warning">Gustavo Douglas Nunes V.</span></small>
-    </footer>
-  </div>
+      <div id="resultado" role="status" class="mt-4 text-lg font-bold min-h-[1.5rem]"></div>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-6 border-t border-neutral-800/80 mt-8">
+    <small class="text-neutral-500 text-xs tracking-wide">Desenvolvido por: <span class="text-yellow-500 font-medium">Gustavo Douglas Nunes V.</span></small>
+  </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>
