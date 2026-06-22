@@ -1,17 +1,18 @@
-# 🎮 ESCAPE ROOM - Escape Room Interativo
+# 🎮 Escape Room Interativo
 
-Um jogo de puzzle tipo escape room com 3 salas, desenvolvido em HTML5, CSS3 e JavaScript puro.
-
+Um jogo de puzzle estilo _escape room_ com 3 salas, desenvolvido em:
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![License](https://img.shields.io/badge/license-MIT-green?style=flat)
 
-## 🚀 Link do Projeto - Vercel
+---
 
-[Clique aqui para visitar o site](https://escape-room-roan-three.vercel.app/)
+## 🚀 Deploy no Vercel
 
-## 📁 Arquivos Necessários
+## [Clique aqui para visitar o site](https://escape-room-roan-three.vercel.app/)
+
+## 📁 Estrutura de Arquivos
 
 ```
 .
@@ -24,22 +25,49 @@ Um jogo de puzzle tipo escape room com 3 salas, desenvolvido em HTML5, CSS3 e Ja
 └── vercel.json      ✅ (Configuração Vercel)
 ```
 
-## 🎯 Código da Sala 1
-- Quadro: **7**
-- Cama: **4**
-- Livro: **2**
-- **Código: 742**
+---
 
-## 📖 Palavra da Sala 2
-- Livro 1: F
-- Livro 2: U
-- Livro 4: G
-- Livro 5: IR
-- **Palavra: FUGIR**
+## 🎯 Gameplay
 
-## 🔗 Sequência da Sala 3
-- **Ordem: SOL → LUA → ESTRELA**
+### Sala 1 - O Quarto Trancado
+
+- Quadro → **7**
+- Cama → **4**
+- Livro → **2**
+- **Código final: 742**
+
+### Sala 2 - Biblioteca
+
+- Livro 1 → F
+- Livro 2 → U
+- Livro 4 → G
+- Livro 5 → IR
+- **Palavra final: FUGIR**
+
+### Sala 3 - Saída Final
+
+- Ordem correta: **SOL → LUA → ESTRELA**
 
 ---
 
+## 🛠️ Tecnologias Utilizadas
+
+- **HTML5** → Estrutura das páginas
+- **CSS3** → Estilização e responsividade
+- **JavaScript** → Lógica interativa do jogo
+- **Tailwind** → Alertas visuais customizados
+- **Vercel** → Deploy e hospedagem
+
+---
+
+## 📜 Autor
+
 **Desenvolvido por:** Gustavo Douglas Nunes V.
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a **MIT License**.
+
+---
